@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   #   resources :products
 
   resources :movies
+  # map '/' to be a redirect to '/movies'
+  root :to => redirect('/movies')
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   match '/signup', to: 'users#new', via: :get
